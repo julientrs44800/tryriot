@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "78fad5c4-0e9e-4193-bdac-cfd56a1cbfd4",
+		"name": "tryriot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28196607"
+	},
+	"item": [
+		{
+			"name": "cryptography",
+			"item": [
+				{
+					"name": "encrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"contact\": {\n    \"email\": \"john@example.com\",\n    \"phone\": \"123-456-7890\"\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/encrypt",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"encrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sm9obiBEb2U=\",\n    \"age\": \"MzA=\",\n    \"contact\": \"eyJlbWFpbCI6ImpvaG5AZXhhbXBsZS5jb20iLCJwaG9uZSI6IjEyMy00NTYtNzg5MCJ9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/decrypt",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"decrypt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"timestamp\": 1616161616,\n    \"message\": \"Hello World\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/sign",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"sign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"signature\": \"a619183f6a4c7a13c1cb9893bd06a5bedb5c9d53763635f5e2655cb9a0d990b6\",\n  \"data\": {\n    \"message\": \"Hello World\",\n    \"timestamp\": 1616161616\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/verify",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
