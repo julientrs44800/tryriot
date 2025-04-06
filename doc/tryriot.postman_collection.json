@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"contact\": {\n    \"email\": \"john@example.com\",\n    \"phone\": \"123-456-7890\"\n  ",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 30,\n  \"contact\": {\n    \"email\": \"john@example.com\",\n    \"phone\": \"123-456-7890\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
