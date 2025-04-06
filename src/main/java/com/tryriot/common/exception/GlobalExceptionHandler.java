@@ -3,7 +3,6 @@ package com.tryriot.common.exception;
 import com.tryriot.cryptography.exception.CreateSignatureFailureException;
 import com.tryriot.cryptography.exception.DecryptionFailureException;
 import com.tryriot.cryptography.exception.EncryptionFailureException;
-import com.tryriot.cryptography.exception.PayloadNotAJSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,11 +16,6 @@ public class GlobalExceptionHandler {
 
     private ResponseEntity<Object> handleException(Exception ex, HttpStatus status, String logMessage) {
         return ResponseEntity.status(status).body(ex.getMessage());
-    }
-
-    @ExceptionHandler({ PayloadNotAJSONException.class })
-    protected ResponseEntity<Object> handlePayloadNotAJSONException(PayloadNotAJSONException ex) {
-        return handleException(ex, ex.returnCode);
     }
 
     @ExceptionHandler({ EncryptionFailureException.class })
